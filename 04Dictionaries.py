@@ -93,3 +93,91 @@ alien_2 = {'color': 'red', 'points': '15'}
 aliens = [alien_0, alien_1, alien_2]
 for alien in aliens:
     print(alien)
+aliens = []
+for el in range(30):
+    aliens.append(alien_0)
+print(aliens)
+print(len(aliens))
+
+for el in aliens[:5]:
+    if el['color'] == 'green':
+        el['color'] = alien_1['color']
+for el in aliens[:5]:
+    print(el)
+
+# list inside a dictionary
+pizz = {
+    'crust': 'thick',
+    'toppings': ['mushrooms', 'extra chess']
+}
+
+# loop list inside dictionary
+for el in pizz['toppings']:
+    print(el)
+fav_language = {
+    'jen': ['python', 'ruby'],
+    'sarah': ['c'],
+    'edward': ['ruby', 'go'],
+    'phil': ['python', 'haskell']
+}
+
+for k, y in fav_language.items():
+
+    if(len(y) > 1):
+        print(f'hello, {k} your fav languages are')
+        for lang in y:
+            print(lang)
+    else:
+        print(f'hello, {k} your fav language is')
+        for lang in y:
+            print(lang)
+
+# dictionary in a dictionary
+# ask user input first and last name with locations
+users = {
+    'dazeng': {
+        'first': 'Danny',
+        'last': 'Zeng',
+        'location': 'Spring'
+    },
+    'limia': {
+        'first': 'Lisa',
+        'last': 'Mia',
+        'location': 'Spring'
+    }
+}
+
+
+def get_user():
+    return_users = []
+    for k in users:
+        return_users.append(k)
+    if(return_users == 0):
+        return False
+    return return_users
+
+
+def add_user():
+    check_len = len(users)
+    get_user_id = get_user()
+    f_name = input('enter your first name: \n')
+    l_name = input('enter your last name: \n')
+    location = input('enter your current loction: \n')
+    user_id = f_name[:2]+l_name
+    if user_id.lower() not in get_user_id:
+        users[user_id.lower()] = {'first': f_name,
+                                  'last': l_name, 'location': location}
+    if(len(users) > check_len):
+        print(users[user_id.lower()])
+        print('user added successfully')
+    else:
+        print('failed to add user.')
+    return
+
+
+# add_user()
+full_name = users['dazeng']['first']
+print(full_name)
+print(type(users))
+for user_id, value in users.items():
+    print(f"full name: {value['first']} {value['last']}")
