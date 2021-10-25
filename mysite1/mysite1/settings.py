@@ -13,7 +13,12 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# abs path for the project director
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# print(os.path.abspath(__file__))
+# print(os.path.dirname(os.path.abspath(__file__)))
+# print(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
@@ -22,9 +27,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'd&$z2hw^)359()qa(q!l5-l)s^_0-r&&spe1feahk+_17@e93_'
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
+# Debug mode True, False - Production mode 
 DEBUG = True
 
+# default localhost 127.0.0.1
 ALLOWED_HOSTS = []
 
 
@@ -49,6 +57,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# main router 
 ROOT_URLCONF = 'mysite1.urls'
 
 TEMPLATES = [
@@ -103,8 +112,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
+# LANGUAGE_CODE = 'zh-Hans'
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
