@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="/cal_html">
+        <input type="text" name="x" value={{x}}>
+        <select id="op" name="opsign" >
+            
+            <option value="add" {% if opsign == 'add' %} selected {% endif %}>+</option>
+            <option value="sub" {% if opsign == 'sub' %} selected {% endif %}>-</option>
+            <option value="mul" {% if opsign == 'mul' %} selected {% endif %}>*</option>
+            <option value="div" {% if opsign == 'div' %} selected {% endif %}>/</option>
+        </select>
+        <input type="text" name="y" value={{y}}>
+        <input type='submit' value='submit'>
+    </form>
+    <h1>{{res}}</h1>
+</body>
+</html>
