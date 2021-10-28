@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+          {% for field in fields %}
+              <th scope="col">{{field.name}}</th>
+          {% endfor %}
+          <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in data %}
+          <tr>
+            <th scope="row">{{row.id}}</th>
+            <th>{{row.title}}</th>
+            <th>{{row.price}}</th>
+            <th>{{row.market_price}}</th>
+            <th>{{row.pub}}</th>
+            <th>{{row.info}}</th>
+            <th>
+                <a href="{% url 'bookstore:edit' row.id %}" class="btn btn-primary">Edit</a>
+            </th>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+</body>
+</html>

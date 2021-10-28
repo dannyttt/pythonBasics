@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Book</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+    
+    <form action="{% url 'bookstore:submit' book.id %}" method="post">
+        <div class="container-sm">
+                <ul class="list-group">
+                    <li class="list-group-item">title: {{book.title}} </li>
+                    <li class="list-group-item">publisher: {{book.pub}} </li>
+                    <li class="list-group-item">price: {{book.price}} <input type="text" name="price"></li>
+                    <li class="list-group-item">market price: {{book.market_price}} <input type="text" name="market-price"></li>
+                </ul>
+                {% if error_message %}<div class="alert alert-danger" role="alert">
+                    This is a danger alert—check it out!
+                  </div>{% endif %}
+                <input type="submit" value="submit" class="btn btn-primary">
+                delete record <input type="radio" name="delete-record" class="btn btn-primary">
+        </div>
+        
+    </form>
+    
+</body>
+</html>
